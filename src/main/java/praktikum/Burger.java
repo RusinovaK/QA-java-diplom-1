@@ -14,10 +14,30 @@ public class Burger {
     public Bun bun;
     public List<Ingredient> ingredients = new ArrayList<>();
 
-    public void setBuns(Bun bun) {
+    //добавила конструктор принимающий объект класса Bun для использования стаба в тесте checkSetBuns()
+    public Burger(Bun bun){
         this.bun = bun;
     }
 
+    //добавила конструктор без параметров что-бы не сломать логику в классе Praktikum
+    public Burger(){}
+
+    //добавила поле и конструктор который принимает Ingredient ingredient для использования стаба в тесте checkAddIngredient()
+    public Ingredient ingredient;
+    public Burger(Ingredient ingredient){
+        this.ingredient = ingredient;
+    }
+
+    //добавила конструктор принимающий объект класса Bun и список Ingredients для теста checkGetPrice().
+    public Burger(Bun bun, List<Ingredient> ingredients){
+        this.bun = bun;
+        this.ingredients = ingredients;
+    }
+
+    public void setBuns(Bun bun) {
+        this.bun = bun;
+    }
+ 
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
     }
